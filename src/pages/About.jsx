@@ -1,10 +1,11 @@
-import NavBar from "../components/navbar";
+import Footer from "../components/Footer/footer";
+import NavBar from "../components/NavBar/navbar";
 
 function About() {
   return (
     <>
       <NavBar />
-      <h1>About</h1>
+      <Footer />
     </>
   );
 }
