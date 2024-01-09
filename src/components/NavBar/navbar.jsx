@@ -11,8 +11,7 @@ function NavBar() {
     <Navbar collapseOnSelect expand="lg" className="navbar-light">
       <Container>
         <Navbar.Brand href="#home">
-          <Image src="src/assets/images/logo-snap.png" width={"54px"} alt="" />
-          //{" "}
+          <Image src="src/assets/images/logo-snap.png" width={"54px"} alt="" />{" "}
           <Image
             src="src/assets/images/flicken-txt.jpg"
             width={"170px"}
