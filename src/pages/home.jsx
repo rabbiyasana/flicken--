@@ -1,10 +1,7 @@
 import Navbar from "../components/navbar";
-import SideBar from "../components/SideBarNav";
 import React from "react";
 
 const Home = () => {
-  const username = localStorage.getItem("username");
-
   return (
     <>
       <div className="container-fluid">
@@ -14,7 +11,6 @@ const Home = () => {
               <Navbar />
             </div>
           </div>
-          <SideBar />
         </div>
       </div>
     </>

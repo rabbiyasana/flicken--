@@ -1,63 +1,46 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-// import { Button, Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 function Navbar() {
   return (
-    <>
-      <div className="container-fluid">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-4">
-              <img src="../assets/images/logo-snap.png" alt="logo-png" />
-              <img src="../assets/images/flicken-txt.jpg" alt="logo-jpgg" />
-            </div>
-            <div className="col-lg-8">
-              <ul class="nav nav-tabs" id="navId" role="tablist">
-                <li class="nav-item">
-                  <a
-                    href="#tab1Id"
-                    class="nav-link active"
-                    data-bs-toggle="tab"
-                    aria-current="page"
-                  >
-                    Home
-                  </a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a href="#" class="nav-link" data-bs-toggle="tab">
-                    About
-                  </a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a
-                    href="#"
-                    className="nav-link disabled"
-                    data-bs-toggle="tab"
-                  >
-                    Contact
-                  </a>
-                </li>
-                {/* <li className="nav-item" role="presentation">
-                  {issignedUp ? (
-                    <a
-                      className="nav-link"
-                      data-bs-toggle="tab"
-                      onClick={handleLoggedOut}
-                    >
-                      Logout
-                    </a>
-                  ) : (
-                    <a href="#" className="nav-link" data-bs-toggle="tab">
-                      Login
-                    </a>
-                  )} 
-                </li>*/}
-              </ul>
-            </div>
+    <div className="container-fluid">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-4">
+            <img
+              src="src/assets/images/logo-snap.png"
+              alt="logo-png"
+              width={"55px"}
+            />
+            <img
+              src="src/assets/images/flicken-txt.jpg"
+              alt="logo-jpgg"
+              width={"170px"}
+            />
+          </div>
+          <div className="col-lg-8">
+            <ul className="nav nav-tabs" id="navId" role="tablist">
+              <li className="nav-item">
+                <Link to="/" className="nav-link" aria-current="page">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/About" className="nav-link">
+                  About
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/Services" className="nav-link">
+                  Services
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
+
 export default Navbar;
