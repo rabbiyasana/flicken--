@@ -1,18 +1,10 @@
-import Navbar from "../components/navbar";
+import NavBar from "../components/navbar";
 import React from "react";
-
+import Carouseel from "../components/carousel/Carouseel";
 const Home = () => {
   return (
     <>
-      <div className="container-fluid">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <Navbar />
-            </div>
-          </div>
-        </div>
-      </div>
+      <Carouseel />
     </>
   );
 };

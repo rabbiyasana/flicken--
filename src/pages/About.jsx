@@ -1,6 +1,9 @@
+import NavBar from "../components/navbar";
+
 function About() {
   return (
     <>
+      <NavBar />
       <h1>About</h1>
     </>
   );
