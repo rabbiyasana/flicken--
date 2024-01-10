@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
 
-function ContactButton() {
+function ContactButton(props) {
   const bg_color = {
     backgroundColor: "#EC5934",
     border: "none",
@@ -8,7 +8,7 @@ function ContactButton() {
   return (
     <>
       <Button size="lg" style={bg_color}>
-        Contact Us
+        {props.text}
       </Button>{" "}
     </>
   );

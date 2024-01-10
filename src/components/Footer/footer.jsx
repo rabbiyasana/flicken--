@@ -1,6 +1,14 @@
 import { Container, Row, Col, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
+import logo from "../../assets/images/logo-snap.png";
+import logotxt from "../../assets/images/flicken-txt.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLocationDot,
+  faPhone,
+  faAt,
+} from "@fortawesome/free-solid-svg-icons";
 import "./footer.css";
 function Footer() {
   return (
@@ -10,16 +18,8 @@ function Footer() {
           <Row className="py-5 mx-auto">
             <Col sm={12} lg={4}>
               <Link to="/" className="navbar-brand">
-                <Image
-                  src="src/assets/images/logo-snap.png"
-                  width={"54px"}
-                  alt=""
-                />
-                <Image
-                  src="src/assets/images/flicken-txt.jpg"
-                  width={"170px"}
-                  alt=""
-                />
+                <Image src={logo} width={"54px"} alt="" />
+                <Image src={logotxt} width={"170px"} alt="" />
               </Link>
             </Col>
             <Col sm={12} lg={4}>
@@ -54,9 +54,18 @@ function Footer() {
                     <b>Contact Us</b>
                   </a>
                 </li>
-                <li> 423, F-block, Johar Town, Lahore, Pakistan</li>
-                <li> +92 423 320750</li>
-                <li> info@flicken.io</li>
+                <li>
+                  <FontAwesomeIcon icon={faLocationDot} /> 423, F-block, Johar
+                  Town, Lahore, Pakistan
+                </li>
+                <li>
+                  {" "}
+                  <FontAwesomeIcon icon={faPhone} /> +92 423 320750
+                </li>
+                <li>
+                  {" "}
+                  <FontAwesomeIcon icon={faAt} /> info@flicken.io
+                </li>
               </ul>
             </Col>
           </Row>

@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
 import NavBar from "../NavBar/navbar";
+import CarouselVideo from "../../assets/images/carousel video.mp4";
 import ContactButton from "../ContactButton/ContactButton";
 import "./carousel.css";
 export default function () {
@@ -11,7 +12,7 @@ export default function () {
   };
   return (
     <>
-      <Container fluid>
+      <Container fluid id="carousel">
         <Row>
           <Col className="text-center">
             <NavBar />
@@ -23,14 +24,11 @@ export default function () {
                   you to design and build your idea.
                 </p>
                 <Link to="/contact" className="nav-link" style={linkStyle}>
-                  <ContactButton />
+                  <ContactButton text="Contact Us" />
                 </Link>
               </div>
               <video autoPlay muted loop className="background-video">
-                <source
-                  src="src/assets/images/carousel video.mp4"
-                  type="video/mp4"
-                />
+                <source src={CarouselVideo} type="video/mp4" />
               </video>
             </div>
           </Col>
