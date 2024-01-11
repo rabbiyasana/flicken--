@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import ProcessBoxLeft from "../ProcessCard/ProcessBoxLeft";
 import "./WorkingProcess.css";
+import ProcessBoxRight from "../ProcessCard/ProcessBoxRight";
 function WorkingProcess() {
   return (
     <>
@@ -30,7 +31,7 @@ function WorkingProcess() {
             </Col>
             <Col xs={12} md={5}>
               <div className="process-point-right-first bg-danger"></div>
-              {/* <ProcessBox /> */}
+              <ProcessBoxRight />
             </Col>
           </Row>
         </Container>
