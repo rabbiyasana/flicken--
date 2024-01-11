@@ -1,0 +1,23 @@
+.process-point-right-first {
+    background: #fff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 8px solid #ea461d;
+    box-shadow: 0 0 0 6px #3f3d56;
+    margin: auto 0;
+    position: absolute;
+    bottom: 113px;
+    left: -63px;
+}
+.process-point-right-first:before {
+    content: "";
+    height: 277px;
+    width: 10px;
+    background: #3f3d56;
+    display: inline-grid;
+    transform: rotate(17deg);
+    position: relative;
+    left: -45px;
+    top: 11px;
+}

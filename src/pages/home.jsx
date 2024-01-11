@@ -5,12 +5,14 @@ import Footer from "../components/Footer/footer";
 import AboutUs from "../components/AboutUs/AboutUs";
 import Services from "../components/Services/Services";
 import Testimonial from "../components/Testimonials/Testimonial";
+import WorkingProcess from "../components/workingProcess/WorkingProcess";
 const Home = () => {
   return (
     <>
       <Carouseel />
       <AboutUs />
       <Services />
+      <WorkingProcess />
       <Testimonial />
       <Footer />
     </>
