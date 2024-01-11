@@ -42,14 +42,16 @@ function NavBar() {
               {" "}
               Services{" "}
             </Nav.Link>
-            <Link to="/career" className="text-white">
-              {" "}
-              Career{" "}
-            </Link>
-            <Nav.Link href="#memes">
+            <Nav.Link>
+              <Link to="/career" className="text-white text-decoration-none">
+                {" "}
+                Career{" "}
+              </Link>
+            </Nav.Link>
+            <Link to="/contact">
               {" "}
               <ContactButton text="Contact Us" />{" "}
-            </Nav.Link>
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
