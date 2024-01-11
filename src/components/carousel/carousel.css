@@ -10,3 +10,13 @@
   .main-carousel{
     height: 100vh;
   }
+  .content{
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  right: 20%;
+  bottom: 30%;
+  left:20%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  }

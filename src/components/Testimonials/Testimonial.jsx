@@ -7,9 +7,9 @@ function Testimonial() {
     <>
       <Container fluid className="py-5">
         <Container>
-          <Row className="justify-content-center">
-            <Col className="text-center">
-              <h1>TESTIMONIALS</h1>
+          <Row>
+            <Col md={{ span: 6, offset: 3 }}>
+              <h1 className="text-center">TESTIMONIALS</h1>
               <hr
                 className="mx-auto"
                 style={{ width: "200px", color: "#EC5934", height: "7px" }}

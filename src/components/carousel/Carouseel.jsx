@@ -16,8 +16,8 @@ export default function () {
         <Row>
           <Col className="text-center">
             <NavBar />
-            <div className="mx-auto my-5 text-align-center text-white main-carousel">
-              <div className="content mx-auto my-auto">
+            <div className=" my-5 text-white main-carousel">
+              <div className="content ">
                 <h1> Empowering the Innovations.</h1>
                 <p>
                   Flicken provides dedicated remote teams that work closely with
