@@ -6,7 +6,7 @@ import ProcessBoxRight from "../ProcessCard/ProcessBoxRight";
 function WorkingProcess() {
   return (
     <>
-      <Container fluid className="py-5">
+      <Container fluid className="py-5 main">
         <Container>
           <Row className="text-center">
             <Col>
@@ -30,7 +30,7 @@ function WorkingProcess() {
               {" "}
             </Col>
             <Col xs={12} md={5}>
-              <div className="process-point-right-first bg-danger"></div>
+              <div className="process-point-left-first bg-danger"></div>
               <ProcessBoxRight />
             </Col>
           </Row>
