@@ -3,7 +3,7 @@ import { useState } from "react";
 function DetailForm() {
   const [form, setForm] = useState({});
   const [errors, setErrors] = useState({});
-  const setField = () => {
+  const setField = (field, value) => {
     setForm({
       ...form,
       [field]: value,
@@ -48,6 +48,7 @@ function DetailForm() {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
+      localStorage.setItem("formData", JSON.stringify(form));
       console.log("Thankyou for your feedback");
     }
   };
@@ -138,7 +139,7 @@ function DetailForm() {
                       <Form.Select
                         aria-label="Default select example"
                         as="select"
-                        onChange={(e) => setField("Jobs", e.target.value)}
+                        onChange={(e) => setField("jobs", e.target.value)}
                       >
                         <option>Select...</option>
                         <option value="Australia">Australia</option>
@@ -175,7 +176,7 @@ function DetailForm() {
                     <Form.Control
                       type="submit"
                       style={{ backgroundColor: "#EA4B23", color: "white" }}
-                      onSubmit={handleSubmit}
+                      onClick={handleSubmit}
                     />
                   </Col>
                 </Row>
