@@ -1,7 +1,6 @@
 .main{
     background-color:  #F7F7F7;
  }
-
  @media only screen and (min-width: 1281px) and (max-width: 2000px) {
     .process-point-right-first{
         background: #fff;
@@ -15,7 +14,6 @@
         bottom: 75px;
         left: -63px;
     }
-    
     .process-point-right-first::before {
         content: "";
         height: 235px;
@@ -27,7 +25,6 @@
         left: -39px;
         top: 11px
     }
-    
     .process-point-left-second {
         background: #fff;
         width: 25px;
@@ -52,7 +49,6 @@
         left: 36px;
         top: 12px;
     }
-    
     .process-point-right-last {
         background: #fff;
         width: 25px;
@@ -66,9 +62,6 @@
         top: 109px;
     }
   }
-
-
-
   @media only screen and (min-width: 1000px) and (max-width: 1280px) {
     .process-point-right-first {
         background: #fff;
@@ -106,8 +99,6 @@
         position: absolute;
         bottom: 102px;
         right: -92px;
-     
-
     }
     .process-point-left-second::before {
         content: "";
@@ -118,10 +109,7 @@
         transform: rotate(-15deg);
         position: relative;
         left: 36px;
-        top: 12px;
-
-
-       
+        top: 12px;  
     }
     .process-point-right-last {
         background: #fff;
@@ -134,9 +122,11 @@
         position: absolute;
         left: -45px;
         top: 94px;
-
     }
-    
-    
+  }
+  @media only screen and (max-width: 1000px) {
+    .process-point-left-second, .process-point-left-second,.process-point-right-last{
+        display: none;
+    }
   }
 

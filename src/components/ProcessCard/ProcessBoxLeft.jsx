@@ -1,7 +1,7 @@
 import Card from "react-bootstrap/Card";
 import { Row, Col } from "react-bootstrap";
 import "./ProcessBox.css";
-function ProcessBoxLeft() {
+function ProcessBoxLeft(props) {
   return (
     <>
       <div
@@ -17,10 +17,8 @@ function ProcessBoxLeft() {
           </Col>
           <Col md={7}>
             <div>
-              <h5>Project Scoping</h5>
-              We engage our clients to fully understand and scope project
-              requirements so we can set realistic expectations. At FLICKEN we
-              aim to build products that reflect your values and brand identity.
+              <h5>{props.heading}</h5>
+              {props.content}
             </div>
           </Col>
         </Row>
