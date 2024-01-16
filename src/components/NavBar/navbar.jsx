@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -11,8 +11,39 @@ import ContactButton from "../ContactButton/ContactButton";
 
 import "./navbar.css";
 function NavBar() {
+  const [activeLink, setActiveLink] = useState("");
+
+  const handleNavLinkClick = (link) => {
+    setActiveLink(link);
+  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const navbar = document.querySelector(".nav-fixed");
+      const footer = document.querySelector(".footer");
+      const scrollPosition = window.scrollY;
+
+      if (navbar && footer) {
+        const footerPosition =
+          footer.getBoundingClientRect().top + window.scrollY;
+        const scrolled =
+          scrollPosition > 100 && scrollPosition < footerPosition;
+
+        navbar.classList.toggle("scrolled", scrolled);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <Navbar collapseOnSelect expand="lg" className="navbar-light">
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      className="navbar-light nav-fixed fixed"
+    >
       <Container>
         <Navbar.Brand href="#home">
           <Image src={logo} width={"54px"} alt="" />{" "}
@@ -29,26 +60,56 @@ function NavBar() {
         </Navbar.Toggle>
 
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto"></Nav>
+          <Nav className="me-auto" style={{ zIndex: 1 }}></Nav>
           <Nav>
-            <Nav.Link href="#" className="text-white">
+            <Nav.Link
+              href="#"
+              onClick={() => handleNavLinkClick("home")}
+              className={`text-white ${
+                activeLink === "home" ? "active-link" : "active-link"
+              }`}
+            >
               Home
             </Nav.Link>
-            <Nav.Link href="#about" className="text-white">
+            <Nav.Link
+              href="#about"
+              onClick={() => handleNavLinkClick("about")}
+              className={`text-white ${
+                activeLink === "about" ? "active-link" : ""
+              }`}
+            >
               {" "}
               About{" "}
             </Nav.Link>
-            <Nav.Link href="#services" className="text-white">
+            <Nav.Link
+              href="#services"
+              onClick={() => handleNavLinkClick("services")}
+              className={`text-white ${
+                activeLink === "services" ? "active-link" : ""
+              }`}
+            >
               {" "}
               Services{" "}
             </Nav.Link>
             <Nav.Link>
-              <Link to="/career" className="text-white text-decoration-none">
+              <Link
+                to="/career"
+                onClick={() => handleNavLinkClick("career")}
+                className={`text-white text-decoration-none ${
+                  activeLink === "career" ? "active-link" : ""
+                }`}
+              >
                 {" "}
                 Career{" "}
               </Link>
             </Nav.Link>
-            <Link to="/contact">
+            <Link
+              to="/contact"
+              onClick={() => handleNavLinkClick("contact")}
+              className={`active-link ${
+                activeLink === "contact" ? "active-link" : ""
+              }`}
+            >
               {" "}
               <ContactButton text="Contact Us" />{" "}
             </Link>
