@@ -140,12 +140,16 @@ function DetailForm() {
                         aria-label="Default select example"
                         as="select"
                         onChange={(e) => setField("jobs", e.target.value)}
+                        isInvalid={!!errors.jobs}
                       >
                         <option>Select...</option>
                         <option value="Australia">Australia</option>
                         <option value="Japan">Japan</option>
                         <option value="United States">United States</option>
                       </Form.Select>
+                      <Form.Control.Feedback type="invalid">
+                        {errors.jobs}
+                      </Form.Control.Feedback>
                     </Form.Group>
                   </Col>
                 </Row>
@@ -158,7 +162,11 @@ function DetailForm() {
                         placeholder="Leave a comment here"
                         style={{ height: "100px" }}
                         onChange={(e) => setField("bio", e.target.value)}
+                        isInvalid={!!errors.bio}
                       />
+                      <Form.Control.Feedback type="invalid">
+                        {errors.bio}
+                      </Form.Control.Feedback>
                     </Form.Group>
                   </Col>
                 </Row>
@@ -166,7 +174,6 @@ function DetailForm() {
                   <Col>
                     <Form.Group controlId="formFile" className="mb-3">
                       <Form.Label>Resume</Form.Label>
-
                       <Form.Control type="file" />
                     </Form.Group>
                   </Col>

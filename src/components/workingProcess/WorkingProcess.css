@@ -1,50 +1,142 @@
-.process-point-right-first {
-    background: #fff;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    border: 8px solid #ea461d;
-    box-shadow: 0 0 0 6px #3f3d56;
-    margin: auto 0;
-    position: absolute;
-    bottom: 113px;
-    left: -63px;
-}
-.process-point-right-first:before {
-    content: "";
-    height: 277px;
-    width: 10px;
-    background: #3f3d56;
-    display: inline-grid;
-    transform: rotate(17deg);
-    position: relative;
-    left: -45px;
-    top: 11px;
-}
-
 .main{
-   background-color:  #F7F7F7;
-}
-/* .process-point-right-first {
-    background: #fff;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    border: 8px solid #ea461d;
-    box-shadow: 0 0 0 6px #3f3d56;
-    margin: auto 0;
-    position: absolute;
-    bottom: 113px;
-    left: -63px;
-}
-.process-point-right-first:before {
-    content: "";
-    height: 277px;
-    width: 10px;
-    background: #3f3d56;
-    display: inline-grid;
-    transform: rotate(17deg);
-    position: relative;
-    left: -45px;
-    top: 11px;
-} */
+    background-color:  #F7F7F7;
+ }
+
+ @media only screen and (min-width: 1281px) and (max-width: 2000px) {
+    .process-point-right-first{
+        background: #fff;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        border: 8px solid #ea461d;
+        box-shadow: 0 0 0 6px #3f3d56;
+        margin: auto 0;
+        position: absolute;
+        bottom: 75px;
+        left: -63px;
+    }
+    
+    .process-point-right-first::before {
+        content: "";
+        height: 235px;
+        width: 10px;
+        background: #3f3d56;
+        display: inline-grid;
+        transform: rotate(17deg);
+        position: relative;
+        left: -39px;
+        top: 11px
+    }
+    
+    .process-point-left-second {
+        background: #fff;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        border: 8px solid #ea461d;
+        box-shadow: 0 0 0 6px #3f3d56;
+        margin: auto 0;
+        position: absolute;
+        bottom: 71px;
+        right: -104px;
+        z-index: 100;
+    }
+    .process-point-left-second::before {
+        content: "";
+        height: 235px;
+        width: 10px;
+        background: #3f3d56;
+        display: inline-grid;
+        transform: rotate(-15deg);
+        position: relative;
+        left: 36px;
+        top: 12px;
+    }
+    
+    .process-point-right-last {
+        background: #fff;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        border: 8px solid #ea461d;
+        box-shadow: 0 0 0 6px #3f3d56;
+        margin: auto 0;
+        position: absolute;
+        left: -71px;
+        top: 109px;
+    }
+  }
+
+
+
+  @media only screen and (min-width: 1000px) and (max-width: 1280px) {
+    .process-point-right-first {
+        background: #fff;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        border: 8px solid #ea461d;
+        box-shadow: 0 0 0 6px #3f3d56;
+        margin: auto 0;
+        position: absolute;
+        bottom: 99px;
+        left: -47px ;
+
+    }
+    .process-point-right-first::before {
+        content: "";
+        width: 10px;
+        background: #3f3d56;
+        display: inline-grid;
+        transform: rotate(17deg);
+        top: 11px;
+        position: relative;
+        height: 265px;
+        left: -42px;   
+
+    }
+    .process-point-left-second {
+        background: #fff;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        border: 8px solid #ea461d;
+        box-shadow: 0 0 0 6px #3f3d56;
+        margin: auto 0;
+        position: absolute;
+        bottom: 102px;
+        right: -92px;
+     
+
+    }
+    .process-point-left-second::before {
+        content: "";
+        height: 252px;
+        width: 10px;
+        background: #3f3d56;
+        display: inline-grid;
+        transform: rotate(-15deg);
+        position: relative;
+        left: 36px;
+        top: 12px;
+
+
+       
+    }
+    .process-point-right-last {
+        background: #fff;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        border: 8px solid #ea461d;
+        box-shadow: 0 0 0 6px #3f3d56;
+        margin: auto 0;
+        position: absolute;
+        left: -45px;
+        top: 94px;
+
+    }
+    
+    
+  }
+
