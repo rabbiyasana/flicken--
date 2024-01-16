@@ -31,9 +31,41 @@ box-shadow: -8px 8px #EBEBEB;
     border-color: rgba(255,0,0,0) rgba(255,0,0,0) #ea461d #ea461d;
     margin-top:-13px;
 
-    right: 285px;
+    right: 360px;
 }
 
+@media only screen and (min-width: 1000px) and (max-width: 1280px) {
+    .step:before {
+        border-color: rgba(255,0,0,0) rgba(255,0,0,0) #ea461d #ea461d;
+        margin-top: -13px;
+        right: 285px;
+    }
+}
+@media (max-width: 1000px) {
+    .step:before {
+        border-color: rgba(255,0,0,0) rgba(255,0,0,0) #ea461d #ea461d;
+        margin-top: -13px;
+        right: 210px;
+    }}
+.step-r:after, .step-r:before {
+    content: "";
+    border-style: solid;
+    border-width: 8px;
+    display: inline-grid;
+    position: absolute;
+    top: 0;
+}
+.step-r:before {
+    border-color: rgba(255,0,0,0) rgba(255,0,0,0) #ea461d #ea461d;
+    left: 150px;
+    top: -12px;
+}
+
+.step-r:after {
+    border-color: rgba(4,136,152,0) #ea461d #ea461d rgba(4,136,152,0);
+    left: 4px;
+    top: -13px;
+}
 
 
 .box_left:after{

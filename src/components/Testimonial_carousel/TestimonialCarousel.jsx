@@ -23,9 +23,12 @@ function TestimonialCarousel() {
         "Flicken did excellent work. Was diligent in understanding what was needed and provided exactly as requested. They were easy to work with and delivered a great product.",
     },
   ];
+  const height = {
+    height: "100%",
+  };
   return (
     <>
-      <Carousel data-bs-theme="light">
+      <Carousel data-bs-theme="dark bg-primary" style={height}>
         {reviews.map((review, index) => (
           <Carousel.Item key={index}>
             <Card className="border-0">
@@ -36,6 +39,7 @@ function TestimonialCarousel() {
                   alt={`Review ${index + 1}`}
                   width="100"
                   height="100"
+                  border="2px solid #EA4B23 !important"
                 />
               </div>
               <Card.Body className="text-center">

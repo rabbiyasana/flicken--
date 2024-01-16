@@ -12,7 +12,13 @@ function Testimonial() {
               <h1 className="text-center">TESTIMONIALS</h1>
               <hr
                 className="mx-auto"
-                style={{ width: "200px", color: "#EC5934", height: "7px" }}
+                style={{
+                  width: "40%",
+                  color: "#EA4B23",
+                  height: "7px",
+                  backgroundColor: "#EA4B23",
+                  // border: "2px solid",
+                }}
               />
               <TestimonialCarousel />
             </Col>
