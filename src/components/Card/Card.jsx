@@ -3,7 +3,7 @@ function ServiceCard(props) {
   return (
     <>
       <Card
-        style={{ width: "18rem", height: "470px" }}
+        style={{ width: "100%", height: "470px" }}
         className="my-3 text-center"
       >
         <Card.Img

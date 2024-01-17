@@ -1,13 +1,13 @@
 import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import AboutImg from "../../assets/images/about.png";
-
+import "./About.css";
 function AboutUs() {
   return (
     <>
       <Container id="about">
         <Row>
-          <Col sm={12} lg={6}>
+          <Col xs={12} md={6}>
             <p style={{ color: "#EA4B23" }}>
               <strong>ABOUT US</strong>
             </p>
@@ -24,7 +24,7 @@ function AboutUs() {
               cloud and e-commerce capabilities.
             </p>
           </Col>
-          <Col sm={12} lg={6}>
+          <Col xs={12} md={6}>
             <Image src={AboutImg} alt="about" style={{ width: "100%" }} />
           </Col>
         </Row>
