@@ -6,3 +6,10 @@ ul>li{
     list-style-type: none;
     color: white;
 }
+p.p{
+    color: white;
+}
+.footer-row{
+    padding-left: 100px;
+    padding-right: 100px;
+}

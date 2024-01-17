@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col, Image, Card } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
 import reviewOne from "../../assets/images/rev.jpg";
+import "./carousel.css";
 function TestimonialCarousel() {
   const reviews = [
     {
@@ -23,23 +24,19 @@ function TestimonialCarousel() {
         "Flicken did excellent work. Was diligent in understanding what was needed and provided exactly as requested. They were easy to work with and delivered a great product.",
     },
   ];
-  const height = {
-    height: "100%",
-  };
   return (
     <>
-      <Carousel data-bs-theme="dark bg-primary" style={height}>
+      <Carousel data-bs-theme="dark bg-primary" className="custom-carousel">
         {reviews.map((review, index) => (
           <Carousel.Item key={index}>
-            <Card className="border-0">
-              <div className="text-center">
+            <Card className="border-0 my-5">
+              <div className="text-center rounded-circle img-outer mx-auto">
                 <img
-                  className="rounded-circle mt-3"
+                  className="rounded-circle p-1"
                   src={review.src}
                   alt={`Review ${index + 1}`}
                   width="100"
                   height="100"
-                  border="2px solid #EA4B23 !important"
                 />
               </div>
               <Card.Body className="text-center">

@@ -8,16 +8,22 @@ function Testimonial() {
       <Container fluid className="py-5">
         <Container>
           <Row>
-            <Col md={{ span: 6, offset: 3 }}>
-              <h1 className="text-center">TESTIMONIALS</h1>
-              <hr
+            <Col
+              md={{ span: 10, offset: 1 }}
+              // style={{
+              //   backgroundColor: "#EA4B23",
+              // }}
+            >
+              <h1 className="text-center" style={{ fontSize: "2rem" }}>
+                TESTIMONIALS
+              </h1>
+              <div
                 className="mx-auto"
                 style={{
                   width: "40%",
-                  color: "#EA4B23",
-                  height: "7px",
+                  // color: "#EA4B23",
+                  height: "5px",
                   backgroundColor: "#EA4B23",
-                  // border: "2px solid",
                 }}
               />
               <TestimonialCarousel />

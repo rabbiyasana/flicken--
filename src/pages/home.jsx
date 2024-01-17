@@ -9,10 +9,11 @@ import WorkingProcess from "../components/workingProcess/WorkingProcess";
 const Home = () => {
   return (
     <>
+      <NavBar />
       <Carouseel />
       <AboutUs />
       <Services />
-      {/* <WorkingProcess /> */}
+      <WorkingProcess />
       <Testimonial />
       <Footer />
     </>

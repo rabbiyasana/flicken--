@@ -20,8 +20,6 @@
     text-decoration: none !important;
   }
 
- 
-
   .active-link {
     display: inline-block;
     position: relative;
@@ -45,4 +43,21 @@
   .active-link:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
+  }
+  .header {
+    /* background-color: #000; */
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav_border{
+    border-bottom: 3px solid rgb(234, 75, 35);;
+  }
+
+  .black-bg {
+    background-color: #000;
+  }
+  .transparent {
+    background-color: transparent;
   }

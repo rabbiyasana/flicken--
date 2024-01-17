@@ -9,26 +9,28 @@ import {
   faPhone,
   faAt,
 } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import "./footer.css";
 function Footer() {
   return (
     <>
-      <Container fluid className="bg-black py-5 footer">
+      <Container fluid className="bg-black py-2 footer">
         <Container className="py-5">
-          <Row className="py-5 mx-auto">
-            <Col sm={12} lg={4}>
+          <Row className="py-1 footer-row mx-auto">
+            <Col sm={12} lg={6}>
               <Link to="/" className="navbar-brand">
-                <Image src={logo} width={"54px"} alt="" />
-                <Image src={logotxt} width={"170px"} alt="" />
+                <Image src={logo} height={"140px"} alt="" />
+                <Image src={logotxt} height={"60px"} alt="" />
               </Link>
             </Col>
-            <Col sm={12} lg={4}>
+            <Col sm={12} lg={3}>
               <ul>
                 <li>
                   <a href="">
                     <b>Links</b>
                   </a>
                 </li>
+                <br />
                 <li>
                   {" "}
                   <a href="/home">Home</a>
@@ -47,13 +49,17 @@ function Footer() {
                 </li>
               </ul>
             </Col>
-            <Col sm={12} lg={4}>
+            <Col sm={12} lg={3}>
               <ul>
                 <li>
                   <a href="">
-                    <b>Contact Us</b>
+                    <strong>
+                      {" "}
+                      <b>Contact Us</b>
+                    </strong>
                   </a>
                 </li>
+                <br />
                 <li>
                   <FontAwesomeIcon icon={faLocationDot} /> 423, F-block, Johar
                   Town, Lahore, Pakistan
@@ -67,6 +73,16 @@ function Footer() {
                   <FontAwesomeIcon icon={faAt} /> info@flicken.io
                 </li>
               </ul>
+            </Col>
+          </Row>
+          <Row className="px-5 pt-2 mx-auto">
+            <Col xs={12} lg={8}>
+              <p className="p mx-5 px-5">Flicken © 2024 All rights reserved.</p>
+            </Col>
+            <Col xs={12} lg={4} className="text-center">
+              <a href="https://www.linkedin.com/company/flicken/">
+                <FontAwesomeIcon icon={faLinkedin} style={{ color: "white" }} />
+              </a>
             </Col>
           </Row>
         </Container>

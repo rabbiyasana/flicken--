@@ -11,40 +11,29 @@ import ContactButton from "../ContactButton/ContactButton";
 
 import "./navbar.css";
 function NavBar() {
-  const [activeLink, setActiveLink] = useState("");
+  const [activeLink, setActiveLink] = useState("home");
 
   const handleNavLinkClick = (link) => {
     setActiveLink(link);
   };
-  useEffect(() => {
-    const handleScroll = () => {
-      const navbar = document.querySelector(".nav-fixed");
-      const footer = document.querySelector(".footer");
-      const scrollPosition = window.scrollY;
+  const header = document.querySelector(".header");
 
-      if (navbar && footer) {
-        const footerPosition =
-          footer.getBoundingClientRect().top + window.scrollY;
-        const scrolled =
-          scrollPosition > 100 && scrollPosition < footerPosition;
-
-        navbar.classList.toggle("scrolled", scrolled);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.add("black-bg");
+      header.classList.remove("transparent");
+    } else {
+      header.classList.remove("black-bg");
+      header.classList.add("transparent");
+    }
+  });
   return (
     <Navbar
       collapseOnSelect
       expand="lg"
-      className="navbar-light nav-fixed fixed"
+      className="navbar-light header transparent "
     >
-      <Container>
+      <Container className="px-5">
         <Navbar.Brand href="#home">
           <Image src={logo} width={"54px"} alt="" />{" "}
           <Image src={logotxt} width={"170px"} alt="" />
@@ -66,7 +55,7 @@ function NavBar() {
               href="#"
               onClick={() => handleNavLinkClick("home")}
               className={`text-white ${
-                activeLink === "home" ? "active-link" : "active-link"
+                activeLink === "home" ? "nav_border px-3" : ""
               }`}
             >
               Home
@@ -74,8 +63,8 @@ function NavBar() {
             <Nav.Link
               href="#about"
               onClick={() => handleNavLinkClick("about")}
-              className={`text-white ${
-                activeLink === "about" ? "active-link" : ""
+              className={`text-white px-3 ${
+                activeLink === "about" ? "nav_border" : ""
               }`}
             >
               {" "}
@@ -84,8 +73,8 @@ function NavBar() {
             <Nav.Link
               href="#services"
               onClick={() => handleNavLinkClick("services")}
-              className={`text-white ${
-                activeLink === "services" ? "active-link" : ""
+              className={`text-white px-3  ${
+                activeLink === "services" ? "nav_border" : ""
               }`}
             >
               {" "}
@@ -95,21 +84,15 @@ function NavBar() {
               <Link
                 to="/career"
                 onClick={() => handleNavLinkClick("career")}
-                className={`text-white text-decoration-none ${
-                  activeLink === "career" ? "active-link" : ""
+                className={`text-white text-decoration-none px-3  ${
+                  activeLink === "career" ? "nav_border" : ""
                 }`}
               >
                 {" "}
                 Career{" "}
               </Link>
             </Nav.Link>
-            <Link
-              to="/contact"
-              onClick={() => handleNavLinkClick("contact")}
-              className={`active-link ${
-                activeLink === "contact" ? "active-link" : ""
-              }`}
-            >
+            <Link to="/contact" onClick={() => handleNavLinkClick("contact")}>
               {" "}
               <ContactButton text="Contact Us" />{" "}
             </Link>

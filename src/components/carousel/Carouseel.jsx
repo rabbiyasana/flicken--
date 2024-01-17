@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import NavBar from "../NavBar/navbar";
 import CarouselVideo from "../../assets/images/carousel video.mp4";
 import ContactButton from "../ContactButton/ContactButton";
+
 import "./carousel.css";
 export default function () {
   const linkStyle = {
@@ -15,7 +16,6 @@ export default function () {
       <Container fluid id="carousel">
         <Row>
           <Col className="text-center">
-            <NavBar />
             <div className=" my-5 text-white main-carousel">
               <div className="content ">
                 <h1> Empowering the Innovations.</h1>
