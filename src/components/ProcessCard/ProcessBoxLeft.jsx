@@ -5,7 +5,7 @@ function ProcessBoxLeft(props) {
   return (
     <>
       <div
-        style={{ width: "18rem" }}
+        style={{ width: "18rem", height: "310px" }}
         className="bg-white d-flex process-box box_left w-100"
       >
         <Row>

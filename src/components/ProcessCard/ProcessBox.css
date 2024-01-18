@@ -93,13 +93,22 @@ box-shadow: -8px 8px #EBEBEB;
 
 .process-line-l{
     right: -150px;
-    top: 105px;
+    top: 144px;
 } 
 .process-line-r {
     left: -150px;
-    top: 105px;
+    top: 142px;
 }
-
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+    .process-line-l{
+        right: -142px;
+        top: 144px;
+    } 
+    .process-line-r {
+        left: -150px;
+        top: 142px;
+    }
+}
 
 .box-right:after {
     content: "";

@@ -16,17 +16,26 @@ function NavBar() {
   const handleNavLinkClick = (link) => {
     setActiveLink(link);
   };
-  const header = document.querySelector(".header");
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector(".header");
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      header.classList.add("black-bg");
-      header.classList.remove("transparent");
-    } else {
-      header.classList.remove("black-bg");
-      header.classList.add("transparent");
-    }
-  });
+      if (window.scrollY > 50) {
+        header.classList.add("black-bg");
+        header.classList.remove("transparent");
+      } else {
+        header.classList.remove("black-bg");
+        header.classList.add("transparent");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean-up function
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <Navbar
       collapseOnSelect

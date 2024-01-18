@@ -15,9 +15,10 @@ function WorkingProcess() {
             </Col>
           </Row>
           {/* project scoping box row */}
-          <Row className="my-5">
+          <Row className="my-5  m-100">
             <Col xs={12} md={5}>
               <ProcessBoxLeft
+                className="animate-left"
                 heading="Project Scoping"
                 content={
                   "We engage our clients to fully understand and scope project requirements so we can set realistic expectations. At FLICKEN we aim to build products that reflect your values and brand identity."
@@ -33,7 +34,7 @@ function WorkingProcess() {
           </Row>
 
           {/* ui/ux design row */}
-          <Row className="my-5">
+          <Row className="my-5  m-100">
             <Col xs={12} md={5} className="position-relative">
               <div className="process-point-left-second"></div>
             </Col>
@@ -51,7 +52,7 @@ function WorkingProcess() {
             </Col>
           </Row>
           {/* third row */}
-          <Row className="my-5">
+          <Row className="my-5  m-100">
             <Col xs={12} md={5}>
               <ProcessBoxLeft
                 heading="Development"
@@ -69,7 +70,7 @@ function WorkingProcess() {
           </Row>
 
           {/* fourth row */}
-          <Row className="my-5">
+          <Row className="my-5  m-100">
             <Col xs={12} md={5} className="position-relative">
               <div className="process-point-left-second"></div>
             </Col>
