@@ -206,7 +206,7 @@ margin: right 100px;
 
 /* left */
   .reveal{
-    transform: translateX(-150px);
+    transform: translateX(-90px);
     opacity: 0;
     transition: 1s all ease;
   }
@@ -217,7 +217,7 @@ margin: right 100px;
   }
 /* right */
   .reveal-r{
-    transform: translateX(150px);
+    transform: translateX(90px);
     opacity: 0;
     transition: 1s all ease;
   }
