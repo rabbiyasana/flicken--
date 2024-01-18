@@ -4,6 +4,41 @@ import ProcessBoxLeft from "../ProcessCard/ProcessBoxLeft";
 import "./WorkingProcess.css";
 import ProcessBoxRight from "../ProcessCard/ProcessBoxRight";
 function WorkingProcess() {
+  function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = 150;
+
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
+      } else {
+        reveals[i].classList.remove("active");
+      }
+    }
+  }
+
+  function revealRight() {
+    var revealright = document.querySelectorAll(".reveal-r");
+
+    for (var i = 0; i < revealright.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = revealright[i].getBoundingClientRect().top;
+      var elementVisible = 150;
+
+      if (elementTop < windowHeight - elementVisible) {
+        revealright[i].classList.add("active");
+      } else {
+        revealright[i].classList.remove("active");
+      }
+    }
+  }
+  window.addEventListener("scroll", function () {
+    reveal();
+    revealRight();
+  });
   return (
     <>
       <Container fluid className="py-5 main">
@@ -16,9 +51,8 @@ function WorkingProcess() {
           </Row>
           {/* project scoping box row */}
           <Row className="my-5  m-100">
-            <Col xs={12} md={5}>
+            <Col xs={12} md={5} className="reveal">
               <ProcessBoxLeft
-                className="animate-left"
                 heading="Project Scoping"
                 content={
                   "We engage our clients to fully understand and scope project requirements so we can set realistic expectations. At FLICKEN we aim to build products that reflect your values and brand identity."
@@ -35,13 +69,13 @@ function WorkingProcess() {
 
           {/* ui/ux design row */}
           <Row className="my-5  m-100">
-            <Col xs={12} md={5} className="position-relative">
+            <Col xs={12} md={5} className="position-relative ">
               <div className="process-point-left-second"></div>
             </Col>
             <Col xs={12} md={2}>
               {" "}
             </Col>
-            <Col xs={12} md={5}>
+            <Col xs={12} md={5} className="reveal-r">
               <div className="process-point-left-first bg-danger"></div>
               <ProcessBoxRight
                 heading="UI/UX Design"
@@ -53,11 +87,11 @@ function WorkingProcess() {
           </Row>
           {/* third row */}
           <Row className="my-5  m-100">
-            <Col xs={12} md={5}>
+            <Col xs={12} md={5} className="reveal">
               <ProcessBoxLeft
                 heading="Development"
                 content={
-                  "With the prototype finalized and approved, we kick start the development process with clear milestones for deliverables. We operate a lean, agile shop and work with clients to define an iterative delivery process. Client engagement is one of our key drivers for successful project execution."
+                  "With the prototype finalized and approved, we kick start the development process with clear milestones for deliverables. We operate a lean, "
                 }
               />
             </Col>
@@ -77,7 +111,7 @@ function WorkingProcess() {
             <Col xs={12} md={2}>
               {" "}
             </Col>
-            <Col xs={12} md={5}>
+            <Col xs={12} md={5} className="reveal-r">
               <div className="process-point-left-first bg-danger"></div>
               <ProcessBoxRight
                 heading="Evaluation"
@@ -90,7 +124,7 @@ function WorkingProcess() {
 
           {/* support row */}
           <Row className="my-5">
-            <Col xs={12} md={5}>
+            <Col xs={12} md={5} className="reveal">
               <ProcessBoxLeft
                 heading="Support"
                 content={
