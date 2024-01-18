@@ -41,6 +41,13 @@ box-shadow: -8px 8px #EBEBEB;
         right: 285px;
     }
 }
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+    .step:before {
+        border-color: rgba(255,0,0,0) rgba(255,0,0,0) #ea461d #ea461d;
+        margin-top: -13px;
+        right: 209px;
+    }
+}
 @media (max-width: 1000px) {
     .step:before {
         border-color: rgba(255,0,0,0) rgba(255,0,0,0) #ea461d #ea461d;
