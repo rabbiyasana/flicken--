@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
+
 function ContactUs() {
   const head = {
     color: "#EA4B23",
@@ -8,6 +9,43 @@ function ContactUs() {
   };
   const font_20 = {
     fontSize: "20px",
+  };
+
+  const [form, setForm] = useState({});
+  const [errors, setErrors] = useState({});
+  const formRef = useRef();
+
+  const setField = (field, value) => {
+    setForm({
+      ...form,
+      [field]: value,
+    });
+  };
+
+  const findErrors = () => {
+    const { FullName, email, PhoneNumber } = form;
+    const newErrors = {};
+    if (!FullName || FullName === "") newErrors.FullName = "cannot be blank";
+    else if (FullName.length > 15) newErrors.FullName = "name is too long";
+    if (!email || email === "") newErrors.email = "cannot be blank";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+      newErrors.email = "Invalid email format!";
+    if (!PhoneNumber || PhoneNumber === "")
+      newErrors.PhoneNumber = "cannot be blank";
+    else if (PhoneNumber.length > 11)
+      PhoneNumber.PhoneNumber = "PhoneNumber is too long";
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newErrors = findErrors();
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+    } else {
+      localStorage.setItem("formData", JSON.stringify(form));
+      console.log("Thankyou for your feedback");
+      formRef.current.reset();
+      setForm({});
+    }
   };
   return (
     <>
@@ -23,13 +61,15 @@ function ContactUs() {
               <p style={{ color: "#818592", fontSize: "20px" }}>
                 Share your ideas & we'll help make them a reality.
               </p>
-              <Form>
+              <Form ref={formRef}>
                 <Form.Group as={Row} className="mb-3" controlId="formPlaintext">
                   <Col sm={10}>
                     <Form.Control
                       type="text"
                       placeholder="Full Name"
                       size="lg"
+                      onChange={(e) => setField("FullName", e.target.value)}
+                      isInvalid={!!errors.FullName}
                     />
                   </Col>
                 </Form.Group>
@@ -39,16 +79,24 @@ function ContactUs() {
                   controlId="formHorizontalEmail"
                 >
                   <Col sm={10}>
-                    <Form.Control type="email" placeholder="Email" size="lg" />
+                    <Form.Control
+                      type="email"
+                      placeholder="Email"
+                      size="lg"
+                      onChange={(e) => setField("email", e.target.value)}
+                      isInvalid={!!errors.email}
+                    />
                   </Col>
                 </Form.Group>
 
                 <Form.Group as={Row} className="mb-3" controlId="formPlaintext">
                   <Col sm={10}>
                     <Form.Control
-                      type="text"
+                      type="number"
                       placeholder="Phone Number"
                       size="lg"
+                      onChange={(e) => setField("PhoneNumber", e.target.value)}
+                      isInvalid={!!errors.PhoneNumber}
                     />
                   </Col>
                 </Form.Group>
@@ -58,6 +106,7 @@ function ContactUs() {
                       type="text"
                       placeholder="Your message here"
                       size="lg"
+                      onChange={(e) => setField("Message", e.target.value)}
                     />
                   </Col>
                 </Form.Group>
@@ -73,6 +122,7 @@ function ContactUs() {
                       type="Submit"
                       size="lg"
                       style={{ backgroundColor: "#ea4b23", color: "white" }}
+                      onClick={handleSubmit}
                     />
                   </Col>
                 </Form.Group>

@@ -1,8 +1,9 @@
 import { Container, Row, Col, Form } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useRef } from "react";
 function DetailForm() {
   const [form, setForm] = useState({});
   const [errors, setErrors] = useState({});
+  const formRef = useRef();
   const setField = (field, value) => {
     setForm({
       ...form,
@@ -20,20 +21,20 @@ function DetailForm() {
     const newErrors = {};
     if (!firstName || firstName === "") newErrors.firstName = "cannot be blank";
     else if (firstName.length > 15)
-      newErrors.firstName = "last name is too long";
+      newErrors.firstName = "first name is too long";
 
     if (!lastName || lastName === "") newErrors.lastName = "cannot be blank";
-    else if (lastName.length > 15) newErrors.lastName = "name is too long";
+    else if (lastName.length > 15) newErrors.lastName = "last name is too long";
 
     if (!email || email === "") newErrors.email = "cannot be blank";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       newErrors.email = "Invalid email format!";
     }
     if (!city || city === "") newErrors.city = "cannot be blank";
-    else if (city.length > 15) newErrors.city = "name is too long";
+    else if (city.length > 15) newErrors.city = " City name is too long";
 
     if (!address || address === "") newErrors.address = "cannot be blank";
-    else if (address.length > 15) newErrors.address = "name is too long";
+    else if (address.length > 15) newErrors.address = "Address is too long";
 
     if (!jobs || jobs === "") newErrors.jobs = "select a job!";
 
@@ -50,6 +51,8 @@ function DetailForm() {
     } else {
       localStorage.setItem("formData", JSON.stringify(form));
       console.log("Thankyou for your feedback");
+      formRef.current.reset();
+      setForm({});
     }
   };
   return (
@@ -59,7 +62,7 @@ function DetailForm() {
           <Row className="my-5">
             <Col md={{ span: 6, offset: 3 }}>
               <h1 className="text-center">Personal Details</h1>
-              <Form className="my-5">
+              <Form ref={formRef} className="my-5">
                 <Row>
                   <Col>
                     <Form.Group>
