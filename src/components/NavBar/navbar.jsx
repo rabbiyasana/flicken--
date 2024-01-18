@@ -20,7 +20,29 @@ function NavBar() {
     const handleScroll = () => {
       const header = document.querySelector(".header");
 
-      if (window.scrollY > 50) {
+      // Get the scroll position
+      const scrollY = window.scrollY;
+
+      // Define the sections and their offsets
+      const sections = {
+        home: 0,
+        about: document.getElementById("about").offsetTop - 50,
+        services: document.getElementById("services").offsetTop - 50,
+      };
+
+      // Determine the current section based on the scroll position
+      let currentSection = "home";
+      Object.entries(sections).forEach(([section, offset]) => {
+        if (scrollY >= offset) {
+          currentSection = section;
+        }
+      });
+
+      // Update the active link
+      setActiveLink(currentSection);
+
+      // Update the header style
+      if (scrollY > 50) {
         header.classList.add("black-bg");
         header.classList.remove("transparent");
       } else {
@@ -29,9 +51,10 @@ function NavBar() {
       }
     };
 
+    // Attach the handleScroll function to the scroll event
     window.addEventListener("scroll", handleScroll);
 
-    // Clean-up function
+    // Detach the handleScroll function when the component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -61,7 +84,7 @@ function NavBar() {
           <Nav className="me-auto" style={{ zIndex: 1 }}></Nav>
           <Nav>
             <Nav.Link
-              href="#"
+              href="#carousel"
               onClick={() => handleNavLinkClick("home")}
               className={`text-white ${
                 activeLink === "home" ? "nav_border px-3" : ""
