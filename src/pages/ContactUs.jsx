@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-
+import emailjs from "emailjs-com";
 function ContactUs() {
   const head = {
     color: "#EA4B23",
@@ -37,16 +37,31 @@ function ContactUs() {
 
     return newErrors;
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = findErrors();
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      localStorage.setItem("formData", JSON.stringify(form));
-      console.log("Thankyou for your feedback");
-      formRef.current.reset();
-      setForm({});
+      try {
+        await emailjs.send(
+          "service_1qh2vyj",
+          "template_8qf51pw",
+          {
+            to_name: "Flicken",
+            from_name: form.FullName,
+            message: form.Message,
+          },
+          "ZhkCyg2acag_zgMHz"
+        );
+
+        console.log("Email sent successfully!");
+        localStorage.setItem("formData", JSON.stringify(form));
+        formRef.current.reset();
+        setForm({});
+      } catch (error) {
+        console.error("Error sending email:", error);
+      }
     }
   };
   return (
