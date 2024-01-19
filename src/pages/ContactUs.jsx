@@ -18,7 +18,7 @@ function ContactUs() {
   const setField = (field, value) => {
     setForm({
       ...form,
-      [field]: value,
+      [field]: value === null ? "" : value,
     });
   };
 
@@ -33,7 +33,9 @@ function ContactUs() {
     if (!PhoneNumber || PhoneNumber === "")
       newErrors.PhoneNumber = "cannot be blank";
     else if (PhoneNumber.length > 11)
-      PhoneNumber.PhoneNumber = "PhoneNumber is too long";
+      newErrors.PhoneNumber = "PhoneNumber is too long";
+
+    return newErrors;
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -71,6 +73,9 @@ function ContactUs() {
                       onChange={(e) => setField("FullName", e.target.value)}
                       isInvalid={!!errors.FullName}
                     />
+                    <Form.Control.Feedback type="invalid">
+                      {errors.FullName}
+                    </Form.Control.Feedback>
                   </Col>
                 </Form.Group>
                 <Form.Group
@@ -86,6 +91,9 @@ function ContactUs() {
                       onChange={(e) => setField("email", e.target.value)}
                       isInvalid={!!errors.email}
                     />
+                    <Form.Control.Feedback type="invalid">
+                      {errors.email}
+                    </Form.Control.Feedback>
                   </Col>
                 </Form.Group>
 
@@ -98,6 +106,9 @@ function ContactUs() {
                       onChange={(e) => setField("PhoneNumber", e.target.value)}
                       isInvalid={!!errors.PhoneNumber}
                     />
+                    <Form.Control.Feedback type="invalid">
+                      {errors.PhoneNumber}
+                    </Form.Control.Feedback>
                   </Col>
                 </Form.Group>
                 <Form.Group as={Row} className="mb-3" controlId="formPlaintext">
