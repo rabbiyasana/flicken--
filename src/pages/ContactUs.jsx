@@ -2,7 +2,6 @@ import React, { useState, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import emailjs from "emailjs-com";
-import { Helmet } from "react-helmet";
 function ContactUs() {
   const head = {
     color: "#EA4B23",
@@ -67,10 +66,6 @@ function ContactUs() {
   };
   return (
     <>
-      <Helmet>
-        <title>Contat us</title>
-        <meta name="description" content="contact us to awail the services" />
-      </Helmet>
       <h1 className="my-5">
         <b style={head}>Flicken</b>
       </h1>

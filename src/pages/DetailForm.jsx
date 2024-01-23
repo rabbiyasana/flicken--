@@ -1,5 +1,7 @@
 import { Container, Row, Col, Form } from "react-bootstrap";
 import { useState, useRef } from "react";
+import emailjs from "emailjs-com";
+
 function DetailForm() {
   const [form, setForm] = useState({});
   const [errors, setErrors] = useState({});
@@ -42,17 +44,31 @@ function DetailForm() {
 
     return newErrors;
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = findFormErrors();
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      localStorage.setItem("formData", JSON.stringify(form));
-      console.log("Thankyou for your feedback");
-      formRef.current.reset();
-      setForm({});
+      try {
+        await emailjs.send(
+          "service_ugcznlo",
+          "template_8qf51pw",
+          {
+            to_name: "Flicken",
+            from_name: form.FullName,
+            message: form.Message,
+          },
+          "ZhkCyg2acag_zgMHz"
+        );
+        localStorage.setItem("formData", JSON.stringify(form));
+        console.log("Thankyou for your feedback");
+        formRef.current.reset();
+        setForm({});
+      } catch (error) {
+        console.error("Error sending email:", error);
+      }
     }
   };
   return (
