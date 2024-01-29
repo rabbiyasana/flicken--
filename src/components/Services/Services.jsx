@@ -5,7 +5,7 @@ import dataengin from "../../assets/images/data-engin.svg";
 import web from "../../assets/images/web.svg";
 import mobile from "../../assets/images/mobile.svg";
 import devops from "../../assets/images/devops.svg";
-import blockchain from "../../assets/images/blockchain.svg";
+// import blockchain from "../../assets/images/blockchain.svg";
 import ui_ux from "../../assets/images/ui_ux.svg";
 import "./services.css";
 function Services() {
@@ -57,7 +57,7 @@ function Services() {
               <ServiceCard
                 title="BlockChain"
                 text="We render our blockchain services where our experts help enterprises adopt blockchain technology seamlessly through advisory & consulting services and blockchain development & maintenance services."
-                src={blockchain}
+                // src={blockchain}
               />
             </Col>
 

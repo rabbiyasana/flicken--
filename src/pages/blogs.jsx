@@ -14,7 +14,7 @@ function Blogs({ blogsData }) {
         <Row className="mt-5">
           {blogsData.map((blog) => (
             <Col key={blog.id} sm={12} md={6} lg={4}>
-              <Link to={`/blog/${blog.id}`}>
+              <Link to={`/blogs/${blog.id}`}>
                 <Card className="mb-4">
                   <Card.Body>
                     <Card.Title>{blog.title}</Card.Title>
@@ -30,7 +30,7 @@ function Blogs({ blogsData }) {
               {blogsData.map((blog) => (
                 <Route
                   key={blog.id}
-                  path={`/blog/${blog.id}`}
+                  path={`/blogs/${blog.id}`}
                   element={
                     <BlogPost
                       title={blog.title}

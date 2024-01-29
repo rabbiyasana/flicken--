@@ -4,9 +4,13 @@ function BlogPost({ title, description }) {
   return (
     <>
       <Container className="mt-5">
-        <Helmet>
+        <Helmet defer={false}>
           <title>{title}</title>
-          <meta name="description" content={description} />
+          <meta
+            name="description"
+            content={description}
+            data-react-helmet="true"
+          />
         </Helmet>
         <Row>
           <Col>

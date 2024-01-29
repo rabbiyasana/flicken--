@@ -100,7 +100,7 @@ function NavBar() {
             </Nav.Link>
             <Nav.Link>
               <Link
-                to="/blogs"
+                to="/blogs/*"
                 onClick={() => handleNavLinkClick("blogs")}
                 className={`text-white text-decoration-none px-3  ${
                   activeLink === "blogs" ? "nav_border" : ""

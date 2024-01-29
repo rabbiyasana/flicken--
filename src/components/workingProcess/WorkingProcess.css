@@ -226,3 +226,19 @@ margin: right 100px;
     transform: translateX(0);
     opacity: 1;
   }
+
+  @media only screen and (max-width: 1000px) {
+    .reveal{
+      transform: translateX(-50px);
+      opacity: 0;
+      transition: 1s all ease;
+    }
+    
+
+
+    .reveal-r{
+      transform: translateX(50px);
+      opacity: 0;
+      transition: 1s all ease;
+    }
+  }

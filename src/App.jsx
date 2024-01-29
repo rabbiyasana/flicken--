@@ -2,8 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import { AllRoutes } from "./routes/Routes";
-import Navbar from "./components/NavBar/navbar";
-// import Login from "./pages/Signup";
+
 function App() {
   return (
     <>

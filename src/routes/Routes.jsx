@@ -18,11 +18,11 @@ const AllRoutes = () => {
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/detailform" element={<DetailForm />} />
-        <Route path="/blogs" element={<Blogs blogsData={blogsData} />} />
+        <Route path="/blogs/*" element={<Blogs blogsData={blogsData} />} />
         {blogsData.map((blog) => (
           <Route
             key={blog.id}
-            path={`blog/${blog.id}`}
+            path={`/blogs/${blog.id}`}
             element={
               <BlogPost title={blog.title} description={blog.description} />
             }
@@ -33,3 +33,4 @@ const AllRoutes = () => {
   );
 };
 export { AllRoutes };
+export const getPostById = (id) => blogsData[id - 1];
